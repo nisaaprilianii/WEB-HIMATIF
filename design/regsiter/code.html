@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daftar Akun - HIMATIF</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with Forms Plugin -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            maroon: {
+              50: '#fdf2f2',
+              100: '#f9dede',
+              200: '#f4c2c2',
+              700: '#8b1b24',
+              800: '#75131b',
+              900: '#681119',
+              950: '#48070d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Stylesheet -->
+<style data-purpose="custom-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Custom select styling for arrow icon */
+    .custom-select-wrapper {
+      position: relative;
+    }
+    .custom-select-wrapper::after {
+      content: 'v';
+      font-family: sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    /* Form input outline focus styling */
+    .input-field {
+      width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      padding: 0.65rem 0.95rem;
+      font-size: 0.925rem;
+      color: #1f2937;
+      background-color: #ffffff;
+      transition: all 0.15s ease-in-out;
+    }
+    .input-field::placeholder {
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: #75131b;
+      box-shadow: 0 0 0 1px #75131b;
+    }
+  </style>
+</head>
+<body class="bg-[#faf8f8] min-h-screen text-stone-800 relative flex flex-col justify-between overflow-x-hidden antialiased">
+<!-- BEGIN: BottomBackgroundGraphic -->
+<!-- Wave background pinned along the bottom viewport -->
+<div aria-hidden="true" class="fixed bottom-0 left-0 right-0 w-full pointer-events-none z-0 select-none overflow-hidden h-[300px] md:h-[360px] lg:h-[390px]">
+<img alt="Abstract Red Background Wave" class="w-full h-full object-cover object-bottom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRts4EvPhIm3FKsGa9fgG9VCKkJR4wSUUUDlJ4rLwFmlRY2u_GJq3rx7ZTjn4OcSlL6mu_rBwTVukrFC0dWkdRXTA9wZykm4DOIgq2ygeaXcE5vgSRllzCFx78lZOIiwJiRPqvEKGCKafX1Gn_GHC6cNS2stmKkkZKI8RTg35fIdFDw4ejFBnJY6Q39SnzOfGshuRzfOAsUM298h8AwG4qPreBnmiulwRqRDmizYIIqlE9OhSopwU9yE0u5cUODbcpALs"/>
+</div>
+<!-- END: BottomBackgroundGraphic -->
+<!-- BEGIN: NavigationHeader -->
+<header class="relative z-10 w-full pt-8 px-6 md:px-12 max-w-[1440px] mx-auto">
+<a class="inline-flex items-center text-maroon-900 hover:text-maroon-700 font-bold text-sm tracking-wide transition-colors group" data-purpose="back-link" href="#">
+<svg class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1 stroke-current" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Kembali ke Halaman Login</span>
+</a>
+</header>
+<!-- END: NavigationHeader -->
+<!-- BEGIN: MainContent -->
+<main class="relative z-10 w-full max-w-[920px] mx-auto px-4 py-6 md:py-8 flex-1">
+<!-- Register Card Container -->
+<div class="bg-white rounded-[24px] border border-stone-200/90 shadow-xl shadow-stone-200/40 p-7 md:p-12 mb-8">
+<!-- Card Header: Title & Description -->
+<div class="mb-7" data-purpose="form-header">
+<h1 class="text-3xl md:text-4xl font-extrabold text-[#70111a] tracking-tight mb-2">
+          Daftar Akun
+        </h1>
+<p class="text-stone-700 text-sm md:text-base max-w-xl leading-relaxed">
+          Lengkapi data diri Anda dan buat akun untuk mengakses berbagai fitur website HIMATIF.
+        </p>
+</div>
+<!-- Registration Form -->
+<form action="#" class="space-y-7" method="POST" onsubmit="event.preventDefault();">
+<!-- SECTION 1: DATA MAHASISWA -->
+<!-- BEGIN: SectionDataMahasiswa -->
+<section aria-labelledby="section-mahasiswa-title" class="space-y-4">
+<!-- Section Banner Badge -->
+<div class="bg-[#fceeed] rounded-lg px-4 py-2.5 flex items-center gap-3.5 border border-[#f8dedc]">
+<div class="w-7 h-7 rounded-full bg-[#681119] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
+              1
+            </div>
+<div>
+<h2 class="text-sm font-bold text-[#681119] leading-tight" id="section-mahasiswa-title">
+                Data Mahasiswa
+              </h2>
+<p class="text-xs text-stone-600 mt-0.5">
+                Isi data diri Anda sesuai dengan identitas yang benar.
+              </p>
+</div>
+</div>
+<!-- Inputs Grid: Nama Lengkap & NIM -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-stone-900" for="nama_lengkap">Nama Lengkap</label>
+<input class="input-field" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan nama lengkap" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-stone-900" for="nim">NIM</label>
+<input class="input-field" id="nim" name="nim" placeholder="Masukkan NIM" type="text"/>
+</div>
+</div>
+<!-- Inputs Grid: Angkatan & Kelas -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-stone-900" for="angkatan">Angkatan</label>
+<div class="custom-select-wrapper">
+<select class="input-field appearance-none cursor-pointer pr-10 text-stone-500 font-normal focus:text-stone-800" id="angkatan" name="angkatan">
+<option disabled="" selected="" value="">Pilih angkatan</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+</select>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-stone-900" for="kelas">Kelas</label>
+<input class="input-field" id="kelas" name="kelas" placeholder="Contoh: TIF RP 24A" type="text"/>
+</div>
+</div>
+<!-- Input: Nomor WhatsApp -->
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-stone-900" for="whatsapp">Nomor WhatsApp</label>
+<input class="input-field" id="whatsapp" name="whatsapp" placeholder="Masukkan nomor WhatsApp aktif" type="tel"/>
+</div>
+</section>
+<!-- END: SectionDataMahasiswa -->
+<!-- SECTION 2: DATA AKUN -->
+<!-- BEGIN: SectionDataAkun -->
+<section aria-labelledby="section-akun-title" class="space-y-4">
+<!-- Section Banner Badge -->
+<div class="bg-[#fceeed] rounded-lg px-4 py-2.5 flex items-center gap-3.5 border border-[#f8dedc]">
+<div class="w-7 h-7 rounded-full bg-[#681119] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
+              2
+            </div>
+<div>
+<h2 class="text-sm font-bold text-[#681119] leading-tight" id="section-akun-title">
+                Data Akun
+              </h2>
+<p class="text-xs text-stone-600 mt-0.5">
+                Buat akun dengan email dan password yang akan Anda gunakan untuk login.
+              </p>
+</div>
+</div>
+<!-- Inputs Grid: Email & Password -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-stone-900" for="email">Email</label>
+<input class="input-field" id="email" name="email" placeholder="Masukkan email aktif" type="email"/>
+</div>
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-stone-900" for="password">Password</label>
+<input class="input-field" id="password" name="password" placeholder="BUat password" type="password"/>
+</div>
+</div>
+<!-- Input: Konfirmasi Password -->
+<div class="space-y-1.5">
+<label class="block text-sm font-bold text-stone-900" for="konfirmasi_password">Konfirmasi Password</label>
+<input class="input-field" id="konfirmasi_password" name="konfirmasi_password" placeholder="Masukkan kembali password" type="password"/>
+</div>
+</section>
+<!-- END: SectionDataAkun -->
+<!-- SECTION 3: VERIFIKASI KEANGGOTAAN -->
+<!-- BEGIN: SectionVerifikasi -->
+<section aria-labelledby="section-verifikasi-title" class="space-y-4">
+<!-- Section Banner Badge -->
+<div class="bg-[#fceeed] rounded-lg px-4 py-2.5 flex items-center gap-3.5 border border-[#f8dedc]">
+<div class="w-7 h-7 rounded-full bg-[#681119] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
+              3
+            </div>
+<div>
+<h2 class="text-sm font-bold text-[#681119] leading-tight" id="section-verifikasi-title">
+                Verifikasi Keanggotaan
+              </h2>
+<p class="text-xs text-stone-600 mt-0.5">
+                Sertifikat PEKMAT wajib dilampirkan untuk melakukan pendaftaran akun HIMATIF.
+              </p>
+</div>
+</div>
+<!-- Upload and Rules 2-Column Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Left: Dashed Upload Box -->
+<div class="border-2 border-dashed border-[#8b1b24] rounded-2xl p-6 flex flex-col items-center justify-center text-center bg-white min-h-[160px]">
+<!-- Outline Document Icon -->
+<svg class="w-7 h-7 text-[#75131b] mb-2" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<h3 class="text-sm font-bold text-stone-900 mb-0.5">Upload Sertifikat PEKMAT</h3>
+<p class="text-[11px] text-stone-500 mb-3.5">PDF, JPG, atau PNG. Maks 5 MB.</p>
+<!-- Hidden File Input & Stylized Trigger Button -->
+<input accept=".pdf,.jpg,.jpeg,.png" class="hidden" id="file_sertifikat" type="file"/>
+<button class="bg-[#e8a3a7] hover:bg-[#e28f94] text-[#4f0c12] text-xs font-semibold px-6 py-1.5 rounded-lg transition-colors cursor-pointer shadow-sm active:scale-95" onclick="document.getElementById('file_sertifikat').click()" type="button">
+                Pilih File
+              </button>
+</div>
+<!-- Right: Instructions Box -->
+<div class="bg-[#fceeed]/70 border border-[#f5d7d5] rounded-2xl p-5 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-2.5 text-[#681119]">
+<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="font-bold text-xs uppercase tracking-wider">Sertifikat PEKMAT</span>
+</div>
+<ul class="text-[11.5px] text-stone-700 space-y-1.5 leading-tight">
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-[#681119] mt-1 shrink-0"></span>
+<span>Pastikan sertifikat yang diunggah jelas dan masih terbaca.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-[#681119] mt-1 shrink-0"></span>
+<span>Format file: PDF, JPG, atau PNG</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-[#681119] mt-1 shrink-0"></span>
+<span>Ukuran maksimal: 5 MB.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- END: SectionVerifikasi -->
+<!-- BEGIN: StatementCheckbox -->
+<!-- User Declaration Checkbox -->
+<div class="pt-1 flex items-start gap-2.5">
+<input checked="" class="w-4 h-4 mt-0.5 text-[#681119] rounded border-stone-300 focus:ring-[#681119] cursor-pointer" id="agreement" name="agreement" type="checkbox"/>
+<label class="text-xs text-stone-800 leading-snug cursor-pointer select-none" for="agreement">
+            Saya menyatakan bahwa data yang saya masukkan benar dan sertifikat PEKMAT yang saya lampirkan merupakan milik saya.
+          </label>
+</div>
+<!-- END: StatementCheckbox -->
+<!-- BEGIN: ActionSubmit -->
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full bg-[#6d131b] hover:bg-[#5b0f16] active:bg-[#4b0b11] text-white font-bold py-3 px-6 rounded-lg text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-md shadow-maroon-900/10 cursor-pointer" data-purpose="submit-btn" type="submit">
+<span>Daftar Akun</span>
+<svg class="w-4 h-4 stroke-current stroke-2" fill="none" viewbox="0 0 24 24">
+<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- END: ActionSubmit -->
+<!-- BEGIN: LoginRedirect -->
+<!-- Footer Login Redirection -->
+<div class="text-center pt-1 pb-1">
+<p class="text-xs font-semibold text-stone-700">
+            Sudah punya akun ? 
+            <a class="text-[#6d131b] hover:underline font-bold ml-1 transition-colors" href="#">
+              Masuk di sini
+            </a>
+</p>
+</div>
+<!-- END: LoginRedirect -->
+</form>
+</div>
+</main>
+<!-- END: MainContent -->
+</body></html>

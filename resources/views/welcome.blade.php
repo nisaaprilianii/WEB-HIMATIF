@@ -42,7 +42,7 @@
                     Beranda
                     <span class="absolute bottom-0 left-0 w-full h-[2.5px] bg-red-500 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.8)]"></span>
                 </a>
-                <a href="#berita" class="text-white/80 hover:text-white font-medium transition-colors">Berita</a>
+                <a href="{{ route('berita.index') }}" class="text-white/80 hover:text-white font-medium transition-colors">Berita</a>
                 
                 <!-- Dropdown: Tentang Kami -->
                 <div class="relative" x-data="{ open: false }" @click.outside="open = false">
@@ -83,7 +83,7 @@
                 </button>
 
                 <!-- Tombol Masuk -->
-                <a href="#masuk" class="bg-white text-gray-900 font-semibold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-sm">
+                <a href="{{ route('login') }}" class="bg-white text-gray-900 font-semibold px-6 py-2 rounded-full shadow-md hover:bg-gray-100 hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-sm">
                     Masuk
                 </a>
             </div>
@@ -110,7 +110,7 @@
              class="md:hidden bg-[#450305]/95 backdrop-blur-md px-6 py-5 border-t border-white/10 space-y-4 relative z-30" 
              style="display: none;">
             <a href="#beranda" class="block text-white font-semibold py-2">Beranda</a>
-            <a href="#berita" class="block text-white/80 hover:text-white py-2">Berita</a>
+            <a href="{{ route('berita.index') }}" class="block text-white/80 hover:text-white py-2">Berita</a>
             <a href="#tentang" class="block text-white/80 hover:text-white py-2">Tentang Kami</a>
             <a href="#materi" class="block text-white/80 hover:text-white py-2">Materi</a>
             <a href="#aspirasi" class="block text-white/80 hover:text-white py-2">Aspirasi</a>
@@ -122,7 +122,7 @@
                     </svg>
                 </button>
             </div>
-            <a href="#masuk" class="block text-center bg-white text-gray-900 font-semibold px-6 py-2.5 rounded-full shadow hover:bg-gray-100 transition mt-2">
+            <a href="{{ route('login') }}" class="block text-center bg-white text-gray-900 font-semibold px-6 py-2.5 rounded-full shadow hover:bg-gray-100 transition mt-2">
                 Masuk
             </a>
         </div>
@@ -654,7 +654,7 @@
                     <div class="grid grid-cols-2 gap-y-2.5 text-sm">
                         <a href="#beranda" class="text-white/75 hover:text-white transition">Beranda</a>
                         <a href="#materi" class="text-white/75 hover:text-white transition">Materi</a>
-                        <a href="#berita" class="text-white/75 hover:text-white transition">Berita</a>
+                        <a href="{{ route('berita.index') }}" class="text-white/75 hover:text-white transition">Berita</a>
                         <a href="#aspirasi" class="text-white/75 hover:text-white transition">Aspirasi</a>
                         <a href="#tentang" class="text-white/75 hover:text-white transition">Tentang Kami</a>
                         <a href="#kontak" class="text-white/75 hover:text-white transition">Kontak</a>
