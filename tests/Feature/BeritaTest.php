@@ -14,7 +14,7 @@ class BeritaTest extends TestCase
         $response = $this->get(route('berita.index'));
 
         $response->assertStatus(200);
-        $response->assertSee('Berita &amp; Informasi', false);
+        $response->assertSee('Berita & Informasi', false);
         $response->assertSee('Ikuti informasi terbaru');
         $response->assertSee('Semua');
         $response->assertSee('Kegiatan');

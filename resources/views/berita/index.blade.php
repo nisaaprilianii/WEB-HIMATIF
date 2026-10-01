@@ -70,14 +70,14 @@
                          x-transition:leave-start="opacity-100 translate-y-0"
                          x-transition:leave-end="opacity-0 translate-y-1"
                          class="absolute left-0 mt-3 w-48 rounded-xl bg-white shadow-xl py-2 z-50 text-gray-800 border border-gray-100">
-                        <a href="{{ url('/#tentang') }}" class="block px-4 py-2 hover:bg-red-50 hover:text-red-700 transition">Profil Organisasi</a>
-                        <a href="{{ url('/#divisi') }}" class="block px-4 py-2 hover:bg-red-50 hover:text-red-700 transition">Departemen & Divisi</a>
-                        <a href="{{ url('/#proker') }}" class="block px-4 py-2 hover:bg-red-50 hover:text-red-700 transition">Program Kerja</a>
+                        <a href="{{ route('sejarah.index') }}" class="block px-4 py-2 hover:bg-red-50 hover:text-red-700 transition">Sejarah & Struktur</a>
+                        <a href="{{ route('sejarah.index') }}#departemen" class="block px-4 py-2 hover:bg-red-50 hover:text-red-700 transition">Departemen & Divisi</a>
+                        <a href="{{ route('sejarah.index') }}#proker" class="block px-4 py-2 hover:bg-red-50 hover:text-red-700 transition">Program Kerja</a>
                     </div>
                 </div>
 
-                <a href="{{ url('/#materi') }}" class="text-white/80 hover:text-white font-medium transition-colors">Materi</a>
-                <a href="{{ url('/#aspirasi') }}" class="text-white/80 hover:text-white font-medium transition-colors">Aspirasi</a>
+                <a href="{{ route('materi.index') }}" class="text-white/80 hover:text-white font-medium transition-colors">Materi</a>
+                <a href="{{ route('aspirasi.index') }}" class="text-white/80 hover:text-white font-medium transition-colors">Aspirasi</a>
             </div>
 
             <!-- Right Actions (Theme Switcher & Login) -->
@@ -118,9 +118,9 @@
              x-cloak>
             <a href="{{ url('/') }}" class="block px-3 py-2 rounded-md font-medium text-white/90 hover:bg-white/10">Beranda</a>
             <a href="{{ route('berita.index') }}" class="block px-3 py-2 rounded-md font-semibold text-white bg-white/10">Berita</a>
-            <a href="{{ url('/#tentang') }}" class="block px-3 py-2 rounded-md font-medium text-white/90 hover:bg-white/10">Tentang Kami</a>
-            <a href="{{ url('/#materi') }}" class="block px-3 py-2 rounded-md font-medium text-white/90 hover:bg-white/10">Materi</a>
-            <a href="{{ url('/#aspirasi') }}" class="block px-3 py-2 rounded-md font-medium text-white/90 hover:bg-white/10">Aspirasi</a>
+            <a href="{{ route('sejarah.index') }}" class="block px-3 py-2 rounded-md font-medium text-white/90 hover:bg-white/10">Tentang Kami</a>
+            <a href="{{ route('materi.index') }}" class="block px-3 py-2 rounded-md font-medium text-white/90 hover:bg-white/10">Materi</a>
+            <a href="{{ route('aspirasi.index') }}" class="block px-3 py-2 rounded-md font-medium text-white/90 hover:bg-white/10">Aspirasi</a>
             <a href="{{ route('login') }}" class="block text-center bg-white text-gray-900 font-semibold px-6 py-2.5 rounded-full shadow hover:bg-gray-100 transition mt-2">
                 Masuk
             </a>
@@ -385,10 +385,10 @@
                     <h3 class="font-bold text-white text-base mb-4 tracking-wide">Menu</h3>
                     <div class="grid grid-cols-2 gap-y-2.5 text-sm">
                         <a href="{{ url('/') }}" class="text-white/75 hover:text-white transition">Beranda</a>
-                        <a href="{{ url('/#materi') }}" class="text-white/75 hover:text-white transition">Materi</a>
+                        <a href="{{ route('materi.index') }}" class="text-white/75 hover:text-white transition">Materi</a>
                         <a href="{{ route('berita.index') }}" class="text-white font-semibold transition">Berita</a>
-                        <a href="{{ url('/#aspirasi') }}" class="text-white/75 hover:text-white transition">Aspirasi</a>
-                        <a href="{{ url('/#tentang') }}" class="text-white/75 hover:text-white transition">Tentang Kami</a>
+                        <a href="{{ route('aspirasi.index') }}" class="text-white/75 hover:text-white transition">Aspirasi</a>
+                        <a href="{{ route('sejarah.index') }}" class="text-white/75 hover:text-white transition">Tentang Kami</a>
                         <a href="{{ url('/#kontak') }}" class="text-white/75 hover:text-white transition">Kontak</a>
                     </div>
                 </div>

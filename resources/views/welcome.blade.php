@@ -62,14 +62,14 @@
                          x-transition:leave-end="opacity-0 translate-y-1"
                          class="absolute left-0 mt-3 w-48 bg-white rounded-xl shadow-xl py-2 text-gray-800 text-sm z-50 border border-gray-100" 
                          style="display: none;">
-                        <a href="#tentang" class="block px-4 py-2 hover:bg-red-50 hover:text-red-600 transition">Profil & Sejarah</a>
-                        <a href="#visi-misi" class="block px-4 py-2 hover:bg-red-50 hover:text-red-600 transition">Visi & Misi</a>
-                        <a href="#struktur" class="block px-4 py-2 hover:bg-red-50 hover:text-red-600 transition">Struktur Organisasi</a>
+                        <a href="{{ route('sejarah.index') }}" class="block px-4 py-2 hover:bg-red-50 hover:text-red-600 transition">Profil & Sejarah</a>
+                        <a href="{{ route('sejarah.index') }}#visimisi" class="block px-4 py-2 hover:bg-red-50 hover:text-red-600 transition">Visi & Misi</a>
+                        <a href="{{ route('sejarah.index') }}#departemen" class="block px-4 py-2 hover:bg-red-50 hover:text-red-600 transition">Struktur Organisasi</a>
                     </div>
                 </div>
 
-                <a href="#materi" class="text-white/80 hover:text-white font-medium transition-colors">Materi</a>
-                <a href="#aspirasi" class="text-white/80 hover:text-white font-medium transition-colors">Aspirasi</a>
+                <a href="{{ route('materi.index') }}" class="text-white/80 hover:text-white font-medium transition-colors">Materi</a>
+                <a href="{{ route('aspirasi.index') }}" class="text-white/80 hover:text-white font-medium transition-colors">Aspirasi</a>
             </div>
 
             <!-- Right Actions (Theme Switcher & Login) -->
@@ -111,9 +111,9 @@
              style="display: none;">
             <a href="#beranda" class="block text-white font-semibold py-2">Beranda</a>
             <a href="{{ route('berita.index') }}" class="block text-white/80 hover:text-white py-2">Berita</a>
-            <a href="#tentang" class="block text-white/80 hover:text-white py-2">Tentang Kami</a>
-            <a href="#materi" class="block text-white/80 hover:text-white py-2">Materi</a>
-            <a href="#aspirasi" class="block text-white/80 hover:text-white py-2">Aspirasi</a>
+            <a href="{{ route('sejarah.index') }}" class="block text-white/80 hover:text-white py-2">Tentang Kami</a>
+            <a href="{{ route('materi.index') }}" class="block text-white/80 hover:text-white py-2">Materi</a>
+            <a href="{{ route('aspirasi.index') }}" class="block text-white/80 hover:text-white py-2">Aspirasi</a>
             <div class="pt-4 border-t border-white/10 flex items-center justify-between">
                 <span class="text-sm text-white/70">Mode Tampilan</span>
                 <button @click="darkMode = !darkMode" class="p-2 rounded-full bg-white/10 text-white">
@@ -653,10 +653,10 @@
                     <h3 class="font-bold text-white text-base mb-4 tracking-wide">Menu</h3>
                     <div class="grid grid-cols-2 gap-y-2.5 text-sm">
                         <a href="#beranda" class="text-white/75 hover:text-white transition">Beranda</a>
-                        <a href="#materi" class="text-white/75 hover:text-white transition">Materi</a>
+                        <a href="{{ route('materi.index') }}" class="text-white/75 hover:text-white transition">Materi</a>
                         <a href="{{ route('berita.index') }}" class="text-white/75 hover:text-white transition">Berita</a>
-                        <a href="#aspirasi" class="text-white/75 hover:text-white transition">Aspirasi</a>
-                        <a href="#tentang" class="text-white/75 hover:text-white transition">Tentang Kami</a>
+                        <a href="{{ route('aspirasi.index') }}" class="text-white/75 hover:text-white transition">Aspirasi</a>
+                        <a href="{{ route('sejarah.index') }}" class="text-white/75 hover:text-white transition">Tentang Kami</a>
                         <a href="#kontak" class="text-white/75 hover:text-white transition">Kontak</a>
                     </div>
                 </div>
