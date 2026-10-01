@@ -14,7 +14,7 @@ class BeritaTest extends TestCase
         $response = $this->get(route('berita.index'));
 
         $response->assertStatus(200);
-        $response->assertSee('Berita & Informasi', false);
+        $response->assertSee('Berita & Informasi');
         $response->assertSee('Ikuti informasi terbaru');
         $response->assertSee('Semua');
         $response->assertSee('Kegiatan');
@@ -49,5 +49,21 @@ class BeritaTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee(route('berita.index'));
+    }
+
+    public function test_berita_can_be_filtered_by_category(): void
+    {
+        $this->get(route('berita.index', ['demo' => 1, 'kategori' => 'Akademik']))
+            ->assertOk()
+            ->assertSee('Pembagian Modul Praktikum')
+            ->assertDontSee('HIMTEC 2026: Hackathon Vol.2');
+    }
+
+    public function test_berita_search_without_result_shows_reset(): void
+    {
+        $this->get(route('berita.index', ['demo' => 1, 'q' => 'tidak-ada-apa-apa']))
+            ->assertOk()
+            ->assertSee('Berita tidak ditemukan')
+            ->assertSee('Reset Filter');
     }
 }

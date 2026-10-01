@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\CollectionPaginator;
+use App\Support\DemoContent;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class MateriController extends Controller
 {
@@ -12,79 +15,26 @@ class MateriController extends Controller
      */
     public function index(Request $request): View
     {
-        $semesters = [1, 2, 3, 4, 5, 6, 7, 8];
-        $selectedSemester = $request->query('semester', 'semua');
+        $semester = $request->integer('semester') ?: null;
+        $search = trim((string) $request->query('q'));
+        $sort = $request->query('urut', 'terbaru');
 
-        // Isi materi dikosongkan terlebih dahulu sesuai instruksi.
-        // Nanti di sesi lain akan diinput manual melalui dashboard admin.
-        $materis = collect();
+        // TODO: ganti dengan query model Materi setelah dashboard admin tersedia.
+        $materis = DemoContent::enabled($request) ? DemoContent::materi() : collect();
 
-        // Opsi demo (?demo=1) untuk melihat pratinjau kartu materi sesuai desain mockup
-        if ($request->boolean('demo')) {
-            $materis = collect([
-                [
-                    'id' => 1,
-                    'type' => 'pdf',
-                    'title' => 'Pengantar Teknologi Informasi',
-                    'prodi' => 'Teknik Informatika',
-                    'dosen' => 'Dosen: Bapak.....',
-                    'description' => 'Materi Pengenalan dasar teknologi informasi, konsep sistem. dan perkembangan ICT.',
-                    'date' => '12 Jan 2024',
-                    'semester' => 1,
-                ],
-                [
-                    'id' => 2,
-                    'type' => 'ppt',
-                    'title' => 'Pengantar Teknologi Informasi',
-                    'prodi' => 'Teknik Informatika',
-                    'dosen' => 'Dosen: Bapak.....',
-                    'description' => 'Materi Pengenalan dasar teknologi informasi, konsep sistem. dan perkembangan ICT.',
-                    'date' => '12 Jan 2024',
-                    'semester' => 1,
-                ],
-                [
-                    'id' => 3,
-                    'type' => 'ppt',
-                    'title' => 'Pengantar Teknologi Informasi',
-                    'prodi' => 'Teknik Informatika',
-                    'dosen' => 'Dosen: Bapak.....',
-                    'description' => 'Materi Pengenalan dasar teknologi informasi, konsep sistem. dan perkembangan ICT.',
-                    'date' => '12 Jan 2024',
-                    'semester' => 2,
-                ],
-                [
-                    'id' => 4,
-                    'type' => 'pdf',
-                    'title' => 'Pengantar Teknologi Informasi',
-                    'prodi' => 'Teknik Informatika',
-                    'dosen' => 'Dosen: Bapak.....',
-                    'description' => 'Materi Pengenalan dasar teknologi informasi, konsep sistem. dan perkembangan ICT.',
-                    'date' => '12 Jan 2024',
-                    'semester' => 2,
-                ],
-                [
-                    'id' => 5,
-                    'type' => 'pdf',
-                    'title' => 'Pengantar Teknologi Informasi',
-                    'prodi' => 'Teknik Informatika',
-                    'dosen' => 'Dosen: Bapak.....',
-                    'description' => 'Materi Pengenalan dasar teknologi informasi, konsep sistem. dan perkembangan ICT.',
-                    'date' => '12 Jan 2024',
-                    'semester' => 3,
-                ],
-                [
-                    'id' => 6,
-                    'type' => 'ppt',
-                    'title' => 'Pengantar Teknologi Informasi',
-                    'prodi' => 'Teknik Informatika',
-                    'dosen' => 'Dosen: Bapak.....',
-                    'description' => 'Materi Pengenalan dasar teknologi informasi, konsep sistem. dan perkembangan ICT.',
-                    'date' => '12 Jan 2024',
-                    'semester' => 3,
-                ],
-            ]);
-        }
+        $materis = $materis
+            ->when($semester, fn ($items) => $items->where('semester', $semester))
+            ->when($search !== '', fn ($items) => $items->filter(
+                fn ($item) => Str::contains($item['title'].' '.$item['dosen'].' '.$item['description'], $search, ignoreCase: true)
+            ))
+            ->pipe(fn ($items) => $sort === 'nama' ? $items->sortBy('title') : $items->sortByDesc('id'));
 
-        return view('materi.index', compact('semesters', 'selectedSemester', 'materis'));
+        return view('pages.materi.index', [
+            'materis' => CollectionPaginator::make($materis->values(), $request),
+            'semesters' => range(1, 8),
+            'semester' => $semester,
+            'search' => $search,
+            'sort' => $sort,
+        ]);
     }
 }

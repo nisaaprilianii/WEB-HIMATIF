@@ -28,7 +28,7 @@ class RegisterTest extends TestCase
         $response->assertSee('Verifikasi Keanggotaan');
         $response->assertSee('Upload Sertifikat PEKMAT');
         $response->assertSee('Sertifikat PEKMAT');
-        $response->assertSee('bg_register.png');
+        $response->assertSee('backgrounds/register.webp');
         $response->assertSee(route('login'));
     }
 

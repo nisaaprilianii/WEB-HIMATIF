@@ -1,11 +1,43 @@
 @import 'tailwindcss';
 
 @source '../views/**/*.blade.php';
+@source '../../config/himatif.php';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
 
+/*
+ * Design token HIMATIF.
+ * Pakai kelas `brand-*` (bg-brand-800, text-brand-700, ...) — JANGAN lagi
+ * menulis hex mentah seperti bg-[#70111a] di view.
+ */
 @theme {
     --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-    --color-primary: #D32F2F;
-    --color-primary-dark: #8B0000;
+
+    --color-brand-50: #fdf3f3;
+    --color-brand-100: #fceeed;
+    --color-brand-200: #f6d6d8;
+    --color-brand-300: #e8a3a7;
+    --color-brand-500: #d32f2f; /* aksen terang: CTA hero, garis eyebrow */
+    --color-brand-600: #b71c1c;
+    --color-brand-700: #8b0000; /* teks aksen, link */
+    --color-brand-800: #70111a; /* warna utama tombol & elemen aktif */
+    --color-brand-900: #5a0609; /* latar header/footer, hover tombol utama */
+    --color-brand-950: #420406;
+
+    --color-canvas: #faf8f8; /* latar halaman */
+}
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+/* Kelas dasar semua input/select/textarea — ubah di sini, berlaku di semua form. */
+@utility form-control {
+    @apply w-full rounded-xl border border-stone-300 bg-white px-4 py-2.5 text-sm text-stone-900 placeholder-stone-400 transition focus:border-brand-800 focus:ring-2 focus:ring-brand-800/15 focus:outline-none aria-invalid:border-red-400 aria-invalid:focus:ring-red-400/20;
 }

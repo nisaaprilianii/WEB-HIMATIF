@@ -17,15 +17,15 @@ class SejarahTest extends TestCase
         $response->assertSee('Sejarah HIMATIF');
         $response->assertSee('Perjalanan HIMATIF');
         $response->assertSee('2025 - 2026');
-        $response->assertSee('Visi & Misi', false);
+        $response->assertSee('Visi & Misi');
         $response->assertSee('Top Man');
         $response->assertSee('Struktur Departemen');
-        $response->assertSee('Program Kerja & Agenda', false);
+        $response->assertSee('Program Kerja & Agenda');
         $response->assertSee('POSDM');
         $response->assertSee('KOMINFO');
         $response->assertSee('PI');
         $response->assertSee('KWU');
-        $response->assertSee('bg-section-2-sejarah.png');
+        $response->assertSee('backgrounds/periode-banner.webp');
     }
 
     /**

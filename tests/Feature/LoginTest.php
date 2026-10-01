@@ -21,7 +21,7 @@ class LoginTest extends TestCase
         $response->assertSee('MASUK');
         $response->assertSee('DAFTAR AKUN');
         $response->assertSee('Lupa Password?');
-        $response->assertSee('bg_login.png');
+        $response->assertSee('backgrounds/login.webp');
     }
 
     /**
@@ -33,5 +33,11 @@ class LoginTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee(route('login'));
+    }
+
+    public function test_login_form_validates_input(): void
+    {
+        $this->post(route('login.store'), [])
+            ->assertSessionHasErrors(['email', 'password']);
     }
 }
